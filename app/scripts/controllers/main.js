@@ -8,7 +8,7 @@
  * Controller of the hipsterifyApp
  */
 angular.module('hipsterifyApp')
-  .controller('MainCtrl', function ($scope, $sce, $q) {
+  .controller('MainCtrl', function ($scope, $sce, $q, Spotify) {
     
     $scope.dirty = {};
     $scope.artist = {};
@@ -24,26 +24,38 @@ angular.module('hipsterifyApp')
 			$scope.artist = {};
 		};
 
-		function suggest_state(term) {
+		function debugSpotify(){
+			Spotify.search('Kean', 'artist', { limit: 5 }).then(function (data) {
+				console.log(data);
+			});
+		};
+
+		function suggestArtist(term) {
 
 			$scope.artist = {};
 
-		  var q = term.toLowerCase().trim();
-		  var results = [];
+			var q = term.toLowerCase().trim();
+			var results = [];
 
-		  // Find first 10 states that start with `term`.
-		  for (var i = 0; i < states.length && results.length < 10; i++) {
-		    var state = states[i];
-		    if (state.toLowerCase().indexOf(q) === 0)
-		      results.push({ label: state, value: state });
-		  }
+			do {
+			    Spotify.search(q, 'artist', { limit: 5 }).then(function (data) {
+					console.log(data);
+					for( var artist in data.artists.items ){
+						results.push({ label: data.artists.items[artist].name, value: data.artists.items[artist].name });
+					}
+				});
 
-		  return results;
+			    
+			}
+			while (results.length > 0);
+
+			return results;
+			
 		};
 
 		$scope.autocomplete_options = {
-		  suggest: suggest_state,
-		  on_select: selectArtist,
+		  suggest: suggestArtist,
+		  on_select: debugSpotify,
 		  on_detach: deleteArtist,
 		  on_attach: deleteArtist
 		};
