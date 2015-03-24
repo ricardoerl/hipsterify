@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'MassAutoComplete'
+    'MassAutoComplete',
+    'spotify'
   ])
   .config(function ($routeProvider) {
     $routeProvider
