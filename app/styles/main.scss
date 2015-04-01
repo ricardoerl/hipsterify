@@ -86,7 +86,7 @@ h1 {
 .artist {
   background-color: #EEE;
   padding: $grid-gutter-width / 2;
-  margin: $grid-gutter-width 0;
+  margin: $grid-gutter-width 0 ;
 
   @include clearfix;
 }
@@ -122,6 +122,11 @@ h1 {
     }
   }
 
+.social-share {
+  display: relative;
+  @include clearfix;
+}
+
 .share-link {
   display: inline-block;
   padding: ($grid-gutter-width / 2) $grid-gutter-width;
@@ -129,6 +134,7 @@ h1 {
   color: $white;
   width: 300px;
   text-align: center;
+  background-color: darken(#EEE, 20%);
 
   &:hover,
   &:focus {
@@ -143,6 +149,28 @@ h1 {
     background-color: $twitter;
   }
 }
+
+  .share-link-artist {
+    width: 48%;
+    float: left;
+    padding: ($grid-gutter-width / 2) $grid-gutter-width;
+    margin: 0 1%;
+    color: $white;
+    text-align: center;
+    
+    &:hover,
+    &:focus {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &.facebook {
+      background-color: $facebook;
+    }
+    &.twitter {
+      background-color: $twitter;
+    }
+  }
 
 .footer {
   position: absolute;

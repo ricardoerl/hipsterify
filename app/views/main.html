@@ -18,3 +18,7 @@
 	</div>
 	<p>{{ artist.level }}</p>
 </div>
+<div ng-show="artist.name" class="social-share">
+	<a class="share-link-artist sharebutton facebook" data-sharetype="facebook" data-text="{{ artist.name }} ➞ {{ artist.popularity }}% hipster on Spotify. Find more in Hipsterify:" title="Share {{ artist.name }}'s rating on Facebook" href="http://ricardoramirez.me/labs/hipsterify/">Share {{ artist.name }}'s rating on Facebook</a>
+	<a class="share-link-artist sharebutton twitter" data-sharetype="twitter" data-text="{{ artist.name }} ➞ {{ artist.popularity }}% hipster on Spotify. Find more in Hipsterify:" data-via="ricardoerl" title="Share {{ artist.name }}'s rating on Twitter" href="http://ricardoramirez.me/labs/hipsterify/">Share {{ artist.name }}'s rating on Twitter</a>
+</div>

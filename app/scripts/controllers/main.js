@@ -21,6 +21,7 @@ angular.module('hipsterifyApp')
 	    ];
 
 		function selectArtist(selected){
+
 			$scope.dirty = {};
 			$scope.artist = {};
 			$scope.artist = selected.obj;
@@ -34,6 +35,8 @@ angular.module('hipsterifyApp')
 			} else if (selected.obj.popularity > 75 && selected.obj.popularity <= 100) {
 				$scope.artist.level = $scope.artistLevels[0];
 			};
+
+			$('.social-share').socialjs();
 		};
 
 		function deleteArtist(){
