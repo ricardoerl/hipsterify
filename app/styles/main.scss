@@ -3,6 +3,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "./vars.scss";
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 
 .browsehappy {
   margin: 0.2em 0;
@@ -11,16 +19,27 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 0.2em 0;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding: 0;
+  margin-bottom: $navbar-height;
+}
+
+h1 {
+  font-weight: 700;
 }
 
 .navbar {
-  
+  margin-bottom: $grid-gutter-width;
 }
   .navbar-brand {
     text-transform: uppercase;
     letter-spacing: 5px;
+    font-weight: 400;
   }
     .form-control {
       width: 100%;
@@ -39,4 +58,96 @@ body {
     list-style: none;
     padding: 0;
   }
+    .ac-menu-item a {
+      color: $black;
+      &:hover,
+      .ac-state-focus & {
+        color: $green;
+        text-decoration: none;
+      }
+    }
+  .suggest-item {
+    display: block;
+    background-color: #EEE;
+    margin: ($grid-gutter-width / 2) 0;
+    padding: $grid-gutter-width / 2;
+
+    font-size: 2.5em;
+    color: $black;
+  
+    &:hover,
+    .ac-state-focus & {
+      color: $green;
+      text-decoration: none;
+    }
+  }
+
+// Artist card
+.artist {
+  background-color: #EEE;
+  padding: $grid-gutter-width / 2;
+  margin: $grid-gutter-width 0;
+
+  @include clearfix;
+}
+  .artist-name {
+    margin: 0;
+    font-size: 3.2em;
+    font-weight: 700;
+  }
+  .artist-rate {
+    font-size: 2em;
+    font-weight: 600;
+  }
+  .artist-image {
+    object-fit: cover; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+    height: 200px;
+    width: 200px;
+
+    float: left;
+    margin-right: $grid-gutter-width / 2;
+  }
+  .artist-link {
+    float: right;
+    background-color: $green;
+    padding: 10px;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: darken($green, 10%);
+      text-decoration: none;
+    }
+  }
+
+.share-link {
+  display: inline-block;
+  padding: ($grid-gutter-width / 2) $grid-gutter-width;
+  margin-left: $grid-gutter-width;
+  color: $white;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &.facebook {
+    background-color: $facebook;
+  }
+  &.twitter {
+    background-color: $twitter;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #EEE;
+
+  padding: $grid-gutter-width 0;
+}
 

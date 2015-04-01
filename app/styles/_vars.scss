@@ -7,6 +7,9 @@ $green: #81C340;
 $black: #231F20;
 $white: #FFF;
 
+$facebook: #3b5998;
+$twitter: #55acee;
+
 //
 // Bootstrap variables
 //----------------------------------------
@@ -30,7 +33,7 @@ $link-hover-color:      darken($link-color, 15%);
 $link-hover-decoration: underline;
 
 // Typography
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  "Open Sans", sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:        $font-family-sans-serif;
@@ -118,6 +121,17 @@ $grid-gutter-width:         30px;
 // Navbar collapse
 $grid-float-breakpoint:     $screen-sm-min;
 $grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+// Container sizes
+
+$container-tablet:             (720px + $grid-gutter-width) !default;
+$container-sm:                 $container-tablet !default;
+
+$container-desktop:            (940px + $grid-gutter-width) !default;
+$container-md:                 $container-desktop !default;
+
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+$container-lg:                 $container-large-desktop !default;
 
 // Navbar
 

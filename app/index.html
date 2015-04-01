@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:700,600,800,400">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body ng-app="hipsterifyApp">
@@ -23,13 +24,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Hipsterify</a>
+          <a href="#/" class="navbar-brand" href="#">Hipsterify</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">About</a></li>
+            <li><a href="#/about">About</a></li>
           </ul>
 
         </div>
@@ -39,6 +40,14 @@
     <div class="container">
     <div ng-view></div>
     </div>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Share</span>
+        <a href="#" class="share-link facebook">Facebook</a>
+        <a href="#" class="share-link twitter">Twitter</a>
+      </div>
+    </footer>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

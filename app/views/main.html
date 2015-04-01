@@ -1,8 +1,20 @@
 
 <div mass-autocomplete>
-  <input class="form-control" placeholder="Search for artists here..." 
+  <input class="form-control" placeholder="Search your artist here..." 
     ng-model="dirty.value"
     mass-autocomplete-item="autocomplete_options">
 </div>
 
-<h2>{{ artist.name }}</h2>
+<div ng-show="artist.name" class="artist">
+	<img class="artist-image" ng-src="{{ artist.images[0].url }}" width="300" height="300" alt="{{ artist.name }}">
+	<a class="artist-link" href="{{ artist.external_urls.spotify }}" target="_blank">Go to profile</a>
+	<span>{{ artist.followers.total | number:0 }} followers</span>
+	<h1 class="artist-name">{{ artist.name }}</h1>
+	<p class="artist-rate">{{ 100 - artist.popularity }}% hipster on Spotify</p>
+	<div class="progress">
+		<div class="progress-bar" role="progressbar" aria-valuenow="{{ 100 - artist.popularity }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ 100 - artist.popularity }}%;">
+		{{ 100 - artist.popularity }}%
+		</div>
+	</div>
+	<p>{{ artist.level }}</p>
+</div>
