@@ -14,7 +14,7 @@ angular.module('hipsterifyApp')
 	    $scope.artist = {};
 	    $scope.artistList = [];
 	    $scope.artistLevels = [
-	    	"Too mainstream to be here. The music was good but everything changed after collaborating with Lil Jon and Pitbull.",
+	    	"Too mainstream to be here. The music was good but everything changed after collaborating with Lil Jon and Pitbul.",
 	    	"On the way to be the next PSY but still with some way to go. Start to pray that no one keep listening this.",
 	    	"Don't know whether to thank Spotify to hide this diamond or just nobody likes this.",
 	    	"Does this exist, anyone?"

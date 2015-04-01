@@ -127,6 +127,8 @@ h1 {
   padding: ($grid-gutter-width / 2) $grid-gutter-width;
   margin-left: $grid-gutter-width;
   color: $white;
+  width: 300px;
+  text-align: center;
 
   &:hover {
     color: $white;
