@@ -1,4 +1,4 @@
-# hipsterify
+# Hipsterify
 
 How hipster is your favorite artist?
 

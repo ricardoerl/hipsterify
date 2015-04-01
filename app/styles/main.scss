@@ -130,7 +130,8 @@ h1 {
   width: 300px;
   text-align: center;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $white;
     text-decoration: none;
   }
